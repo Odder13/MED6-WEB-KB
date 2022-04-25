@@ -1,0 +1,177 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #202124;
+  font-family: monospace;
+  font-size: 1.25rem;
+  margin-left: 25%;
+  margin-right: 25%;
+  color: #e1e1e1;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  padding-bottom: 3rem;
+}
+
+ul {
+  padding-left: 0;
+}
+
+#Hi {
+  color: #bb86fc;
+  margin-bottom: -5vh;
+}
+
+#Name {
+  font-size: 5rem;
+}
+
+/*NAVIGATION BAR*/
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #3c4042;
+  overflow: auto;
+  height: auto;
+  opacity: 98%;
+  font-size: 1rem;
+  z-index: 1;
+}
+.navbartext {
+  float: right;
+  padding: 14px;
+}
+.navnum {
+  color: #bb86fc;
+  text-decoration: none;
+}
+.navname {
+  color: #e1e1e1;
+}
+.navnum:hover .navname {
+  color: #bb86fc;
+}
+
+.pageSize {
+  min-height: 70vh;
+  margin-top: 30vh;
+}
+
+.p {
+  color: #bb86fc;
+}
+
+/*PROJECT GRID*/
+.projectDisplay {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 5rem;
+  margin-left: -20%;
+  margin-right: -20%;
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+  border-radius: 10px;
+  text-align: center;
+  height: 200px;
+  max-width: 300px;
+  background-color: #472360;
+  transition: 0.3s;
+}
+.project:hover {
+  background-color: #633286;
+  transition: 0.3s;
+}
+.project h4 {
+  font-size: 1.5rem;
+  margin-top: 0rem;
+  text-decoration: underline;
+}
+.project h5 {
+  font-size: 1.25rem;
+  margin-top: 0rem;
+}
+
+/*FORMS*/
+.likert li {
+  float: left;
+}
+.sus {
+  font: 14px monospace;
+}
+h1.likert-header {
+  margin: 4rem 0 0;
+}
+form .statement {
+  display: block;
+  font-size: 16px;
+  padding: 30px 0 0;
+  margin-bottom: 1rem;
+}
+form .likert {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 75px;
+  display: block;
+  border-bottom: 2px solid #e1e1e1;
+}
+form .likert:last-of-type {
+  border-bottom: 0;
+}
+form .likert:before {
+  content: "";
+  position: relative;
+  top: 11px;
+  left: 5%;
+  display: block;
+  background-color: #e1e1e1;
+  height: 4px;
+  width: 40%;
+}
+form .likert li {
+  display: inline-block;
+  width: 10%;
+  text-align: center;
+}
+form .likert li input[type="radio"] {
+  display: block;
+  position: relative;
+  left: 50%;
+  margin-left: -6px;
+}
+form .likert li label {
+  width: 100%;
+}
+
+/*FORMS BUTTON*/
+form .submit {
+  margin: 2rem 0;
+  text-align: center;
+  font-size: 18px;
+  font-family: monospace;
+  color: #e1e1e1;
+}
+form .submit {
+  padding: 5px 10px;
+  background-color: #472360;
+  border: 0;
+  border-radius: 3px;
+  width: 5rem;
+  height: 3rem;
+  transition: 0.3s;
+}
+form .submit:hover {
+  background-color: #633286;
+  transition: 0.3s;
+}
