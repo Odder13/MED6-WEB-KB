@@ -63,6 +63,7 @@ function App() {
         },
       ]);
     });
+    setName("");
     setQ0("");
     setQ1("");
     setQ2("");
