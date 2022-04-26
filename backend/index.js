@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 mongoose.connect(
-  "mongodb+srv://KasperB:Odderdammen13MONGODB@miniprojekt-cluster.qifmi.mongodb.net/MED6KB-WebDB?retryWrites=true&w=majority"
+  "mongodb+srv://MED6KB:MED6databaseKB@miniprojekt-cluster.qifmi.mongodb.net/MED6KB-WebDB?retryWrites=true&w=majority"
 );
 
 app.get("/getProjects", (req, res) => {
