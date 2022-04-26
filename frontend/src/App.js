@@ -7,12 +7,11 @@ import Welcome from "./components/Welcome";
 import Navbar from "./components/Navbar";
 
 function App() {
-  const [listOfProjects, setListOfProjects] = useState([]); // example of pre-populating ([{ id: 1, name: "Pedro", age: 20, username: "pedro123" }]);
-  const [name, setName] = useState("");
-  const [theme, setTheme] = useState("");
-  const [subtheme, setSubtheme] = useState("");
-
+  const [listOfProjects, setListOfProjects] = useState([]);
   const [listOfAnswers, setListOfAnswers] = useState([]);
+  /*const [theme, setTheme] = useState("");
+  const [subtheme, setSubtheme] = useState("");*/
+  const [name, setName] = useState("");
   const [Q0, setQ0] = useState("");
   const [Q1, setQ1] = useState("");
   const [Q2, setQ2] = useState("");
@@ -30,11 +29,17 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    Axios.get("http://localhost:3002/getAnswers").then((response) => {
+      setListOfAnswers(response.data);
+    });
+  }, []);
+
   const createAnswer = (ev) => {
     ev.preventDefault();
     document.forms[0].reset(); //Resets the forms to prepare for the next response
     Axios.post("http://localhost:3002/createAnswer", {
-      name, //similar to writing name = name;
+      name,
       Q0,
       Q1,
       Q2,
@@ -47,33 +52,10 @@ function App() {
       Q9,
     }).then((response) => {
       setListOfAnswers([
-        ...listOfAnswers, //This updates the listOfUsers to whatever it was ([...listOfUsers]), + whatever was added.
-        {
-          name, //similar to writing name = name;
-          Q0,
-          Q1,
-          Q2,
-          Q3,
-          Q4,
-          Q5,
-          Q6,
-          Q7,
-          Q8,
-          Q9,
-        },
+        ...listOfAnswers,
+        { name, Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9 },
       ]);
     });
-    setName("");
-    setQ0("");
-    setQ1("");
-    setQ2("");
-    setQ3("");
-    setQ4("");
-    setQ5("");
-    setQ6("");
-    setQ7("");
-    setQ8("");
-    setQ9("");
   };
 
   return (
@@ -100,20 +82,18 @@ function App() {
             culpa qui officia deserunt mollit anim id est laborum.
           </h3>
         </ul>
-        <div>
-          <div class="projectDisplay">
-            {listOfProjects.map((project) => {
-              return (
-                <div class="projectplacement">
-                  <div class="project">
-                    <h4>{project.name}</h4>
-                    <h5>{project.theme}</h5>
-                    <h5>{project.subtheme}</h5>
-                  </div>
+        <div class="projectDisplay">
+          {listOfProjects.map((project) => {
+            return (
+              <div class="projectplacement">
+                <div class="project">
+                  <h4>{project.name}</h4>
+                  <h5>{project.theme}</h5>
+                  <h5>{project.subtheme}</h5>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 
@@ -721,6 +701,24 @@ function App() {
               Send{" "}
             </button>
           </form>
+
+          <div class="projectDisplay">
+            {listOfAnswers.map((answer) => {
+              return (
+                <div class="projectplacement">
+                  <div class="project">
+                    <h5>
+                      {" "}
+                      {answer.name} <br></br>
+                      {answer.Q0},{answer.Q1},{answer.Q2},{answer.Q3},
+                      {answer.Q4},{answer.Q5},{answer.Q6},{answer.Q7},
+                      {answer.Q8},{answer.Q9}
+                    </h5>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
 
