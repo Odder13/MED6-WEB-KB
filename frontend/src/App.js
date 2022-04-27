@@ -102,11 +102,13 @@ function App() {
         <h1 id="Name">Questionnaire</h1>
         <ul>
           <h3>
-            Oh, and I implemented the System Usability Scale questionnaire for
-            the 6th semester project. We did however end up using Google Forms
-            instead. The response will be visible in the database after
-            responding, and all values are reset between responses (Or well...
-            set to the string "Invalid" anyways).
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
           </h3>
         </ul>
         <div class="sus">
