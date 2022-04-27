@@ -1,5 +1,6 @@
 # Personal CV - TWSM Mini Project
- 
+Made by Kasper Bisbo
+
 ## Instructions
 To start the server and open the website in your browser, follow these steps:
 - Download the repository from GitHub. 
